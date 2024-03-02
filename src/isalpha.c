@@ -1,17 +1,17 @@
-int isupper(int c) {
-  if (c >= 'A' || c <= 'Z')
+int ft_isupper(int c) {
+  if (c >= 'A' && c <= 'Z')
     return (1);
   return (0);
 }
 
-int islower(int c) {
-  if (c >= 'a' || c <= 'z')
+int ft_islower(int c) {
+  if (c >= 'a' && c <= 'z')
     return (1);
   return (0);
 }
 
-int isalpha(int c) {
-  if (isupper(c) || islower(c))
+int ft_isalpha(int c) {
+  if (ft_isupper(c) || ft_islower(c))
     return (1);
   return (0);
 }
