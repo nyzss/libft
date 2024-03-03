@@ -29,6 +29,8 @@ SRC_FILES = bzero.c \
 	strlen.c \
 	memset.c \
 	memcpy.c \
+	toupper.c \
+	tolower.c \
 
 LIB = libft.a
 
