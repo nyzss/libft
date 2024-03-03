@@ -9,12 +9,12 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_isdigit.o",
-      "src/ft_isdigit.c"
+      "src/atoi.o",
+      "src/atoi.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_isdigit.c",
-    "output": "/home/nyzs/dev/libft/src/ft_isdigit.o"
+    "file": "/home/nyzs/dev/libft/src/atoi.c",
+    "output": "/home/nyzs/dev/libft/src/atoi.o"
   },
   {
     "arguments": [
@@ -26,12 +26,12 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_isalpha.o",
-      "src/ft_isalpha.c"
+      "src/bzero.o",
+      "src/bzero.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_isalpha.c",
-    "output": "/home/nyzs/dev/libft/src/ft_isalpha.o"
+    "file": "/home/nyzs/dev/libft/src/bzero.c",
+    "output": "/home/nyzs/dev/libft/src/bzero.o"
   },
   {
     "arguments": [
@@ -43,12 +43,12 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_isascii.o",
-      "src/ft_isascii.c"
+      "src/isalnum.o",
+      "src/isalnum.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_isascii.c",
-    "output": "/home/nyzs/dev/libft/src/ft_isascii.o"
+    "file": "/home/nyzs/dev/libft/src/isalnum.c",
+    "output": "/home/nyzs/dev/libft/src/isalnum.o"
   },
   {
     "arguments": [
@@ -60,12 +60,12 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_isalnum.o",
-      "src/ft_isalnum.c"
+      "src/isalpha.o",
+      "src/isalpha.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_isalnum.c",
-    "output": "/home/nyzs/dev/libft/src/ft_isalnum.o"
+    "file": "/home/nyzs/dev/libft/src/isalpha.c",
+    "output": "/home/nyzs/dev/libft/src/isalpha.o"
   },
   {
     "arguments": [
@@ -77,12 +77,12 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_isprint.o",
-      "src/ft_isprint.c"
+      "src/isascii.o",
+      "src/isascii.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_isprint.c",
-    "output": "/home/nyzs/dev/libft/src/ft_isprint.o"
+    "file": "/home/nyzs/dev/libft/src/isascii.c",
+    "output": "/home/nyzs/dev/libft/src/isascii.o"
   },
   {
     "arguments": [
@@ -94,12 +94,12 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_strlen.o",
-      "src/ft_strlen.c"
+      "src/isdigit.o",
+      "src/isdigit.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_strlen.c",
-    "output": "/home/nyzs/dev/libft/src/ft_strlen.o"
+    "file": "/home/nyzs/dev/libft/src/isdigit.c",
+    "output": "/home/nyzs/dev/libft/src/isdigit.o"
   },
   {
     "arguments": [
@@ -111,12 +111,199 @@
       "./includes/",
       "-c",
       "-o",
-      "src/ft_strlcpy.o",
-      "src/ft_strlcpy.c"
+      "src/isprint.o",
+      "src/isprint.c"
     ],
     "directory": "/home/nyzs/dev/libft",
-    "file": "/home/nyzs/dev/libft/src/ft_strlcpy.c",
-    "output": "/home/nyzs/dev/libft/src/ft_strlcpy.o"
+    "file": "/home/nyzs/dev/libft/src/isprint.c",
+    "output": "/home/nyzs/dev/libft/src/isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/memcpy.o",
+      "src/memcpy.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/memcpy.c",
+    "output": "/home/nyzs/dev/libft/src/memcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/memmove.o",
+      "src/memmove.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/memmove.c",
+    "output": "/home/nyzs/dev/libft/src/memmove.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/memset.o",
+      "src/memset.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/memset.c",
+    "output": "/home/nyzs/dev/libft/src/memset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strchr.o",
+      "src/strchr.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strchr.c",
+    "output": "/home/nyzs/dev/libft/src/strchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strlcat.o",
+      "src/strlcat.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strlcat.c",
+    "output": "/home/nyzs/dev/libft/src/strlcat.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strlcpy.o",
+      "src/strlcpy.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strlcpy.c",
+    "output": "/home/nyzs/dev/libft/src/strlcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strlen.o",
+      "src/strlen.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strlen.c",
+    "output": "/home/nyzs/dev/libft/src/strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strrchr.o",
+      "src/strrchr.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strrchr.c",
+    "output": "/home/nyzs/dev/libft/src/strrchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/tolower.o",
+      "src/tolower.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/tolower.c",
+    "output": "/home/nyzs/dev/libft/src/tolower.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/toupper.o",
+      "src/toupper.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/toupper.c",
+    "output": "/home/nyzs/dev/libft/src/toupper.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strncmp.o",
+      "src/strncmp.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strncmp.c",
+    "output": "/home/nyzs/dev/libft/src/strncmp.o"
   },
   {
     "arguments": [

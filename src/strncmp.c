@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,12 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
+	while (i < n && (s1[i] == s2[i]))
 		i++;
-	}
-	if (str[i] == c)
-		return ((char *)&str[i]);
-	return (NULL);
+	return (s1[i] - s2[i]);
 }

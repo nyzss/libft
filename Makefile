@@ -18,8 +18,7 @@ SRC_DIR = ./src/
 
 INCLUDES_DIR = ./includes/
 
-SRC_FILES =
-	atoi.c \
+SRC_FILES = atoi.c \
 	bzero.c \
 	isalnum.c \
 	isalpha.c \
@@ -36,6 +35,7 @@ SRC_FILES =
 	strrchr.c \
 	tolower.c \
 	toupper.c \
+	strncmp.c \
 
 LIB = libft.a
 
