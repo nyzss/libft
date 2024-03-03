@@ -9,12 +9,114 @@
       "./includes/",
       "-c",
       "-o",
+      "src/ft_isdigit.o",
+      "src/ft_isdigit.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_isdigit.c",
+    "output": "/home/nyzs/dev/libft/src/ft_isdigit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/ft_isalpha.o",
+      "src/ft_isalpha.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_isalpha.c",
+    "output": "/home/nyzs/dev/libft/src/ft_isalpha.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/ft_isascii.o",
+      "src/ft_isascii.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_isascii.c",
+    "output": "/home/nyzs/dev/libft/src/ft_isascii.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/ft_isalnum.o",
+      "src/ft_isalnum.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_isalnum.c",
+    "output": "/home/nyzs/dev/libft/src/ft_isalnum.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/ft_isprint.o",
+      "src/ft_isprint.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_isprint.c",
+    "output": "/home/nyzs/dev/libft/src/ft_isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
       "src/ft_strlen.o",
       "src/ft_strlen.c"
     ],
     "directory": "/home/nyzs/dev/libft",
     "file": "/home/nyzs/dev/libft/src/ft_strlen.c",
     "output": "/home/nyzs/dev/libft/src/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/ft_strlcpy.o",
+      "src/ft_strlcpy.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_strlcpy.c",
+    "output": "/home/nyzs/dev/libft/src/ft_strlcpy.o"
   },
   {
     "arguments": [

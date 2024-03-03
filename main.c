@@ -11,10 +11,8 @@
 /* ************************************************************************** */
 
 #include "includes/libft.h"
-
-#include <string.h>
-
 #include <stdio.h>
+#include <string.h>
 
 void	check_is(void)
 {
@@ -49,7 +47,19 @@ void	check_is(void)
 void	check_str(void)
 {
 	char	*s1;
+	char	original_dst[100];
+	char	ft_dst[100];
+	char	*src;
+	int		original_ret;
+	int		ft_ret;
+	int		size;
 
+	char	catoriginal_dst[100];
+	char	catft_dst[100];
+	char	*catsrc;
+	int		catoriginal_ret;
+	int		catft_ret;
+	int		catsize;
 
 	// char s2[100];
 	s1 = "Hello world!";
@@ -57,45 +67,33 @@ void	check_str(void)
 	printf("\nString functions: \n\n");
 	printf(" --------\n");
 	printf("ft_strlen: %s -> %lu\n", s1, ft_strlen(s1));
-
 	printf("\n  -----------\n\n");
 
-	char	original_dst[100];
-	char	ft_dst[100];
-	char	*src;
-
-	int	original_ret;
-	int	ft_ret;
-	int	size;
-
 	src = "this is the source string.";
-	size = 15;
+	size = 3;
 	original_ret = strlcpy(original_dst, src, size);
-	ft_ret = strlcpy(ft_dst, src, size);
+	ft_ret = ft_strlcpy(ft_dst, src, size);
 
-	printf("FIRST --> strlcpy (original): '%s' -> return: %d \n", original_dst, original_ret);
+	printf("\n   #### STRLCPY ####\n\n");
+	printf("FIRST --> strlcpy (original): '%s' -> return: %d \n", original_dst,
+		original_ret);
 	printf("\n");
-	printf("SECOND -> ft_strlcpy (mine): '%s' -> return: %d \n", ft_dst, ft_ret);
+	printf("SECOND -> ft_strlcpy (mine): '%s' -> return: %d \n", ft_dst,
+		ft_ret);
 
-
-	char	catoriginal_dst[100];
-	char	catft_dst[100];
-	char	*catsrc;
-
-	int	catoriginal_ret;
-	int	catft_ret;
-	int	catsize;
-
-	ft_strlcpy(catoriginal_dst, "hello world", 11);
-	ft_strlcpy(catft_dst, "hello world", 11);
+	ft_strlcpy(catoriginal_dst, "hello", 12);
+	ft_strlcpy(catft_dst, "hello", 12);
 	catsrc = "this is the source string.";
-	catsize = 15;
+	catsize = 5;
 	catoriginal_ret = strlcat(catoriginal_dst, catsrc, catsize);
-	catft_ret = strlcat(catft_dst, catsrc, catsize);
+	catft_ret = ft_strlcat(catft_dst, catsrc, catsize);
 
-	printf("FIRST --> strlcat (original): '%s' -> return: %d \n", catoriginal_dst, catoriginal_ret);
+	printf("\n   #### STRLCAT ####\n\n");
+	printf("FIRST --> strlcat (original): '%s' -> return: %d \n",
+		catoriginal_dst, catoriginal_ret);
 	printf("\n");
-	printf("SECOND -> strlcat (mine): '%s' -> return: %d \n", catft_dst, catft_ret);
+	printf("SECOND -> ft_strlcat (mine): '%s' -> return: %d \n", catft_dst,
+		catft_ret);
 	printf("\n  ------------------------------\n");
 }
 
