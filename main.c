@@ -75,7 +75,27 @@ void	check_str(void)
 
 	printf("FIRST --> strlcpy (original): '%s' -> return: %d \n", original_dst, original_ret);
 	printf("\n");
-	printf("SECOND -> ft_strlcpy  (mine): '%s' -> return: %d \n", ft_dst, ft_ret);
+	printf("SECOND -> ft_strlcpy (mine): '%s' -> return: %d \n", ft_dst, ft_ret);
+
+
+	char	catoriginal_dst[100];
+	char	catft_dst[100];
+	char	*catsrc;
+
+	int	catoriginal_ret;
+	int	catft_ret;
+	int	catsize;
+
+	ft_strlcpy(catoriginal_dst, "hello world", 11);
+	ft_strlcpy(catft_dst, "hello world", 11);
+	catsrc = "this is the source string.";
+	catsize = 15;
+	catoriginal_ret = strlcat(catoriginal_dst, catsrc, catsize);
+	catft_ret = strlcat(catft_dst, catsrc, catsize);
+
+	printf("FIRST --> strlcat (original): '%s' -> return: %d \n", catoriginal_dst, catoriginal_ret);
+	printf("\n");
+	printf("SECOND -> strlcat (mine): '%s' -> return: %d \n", catft_dst, catft_ret);
 	printf("\n  ------------------------------\n");
 }
 
