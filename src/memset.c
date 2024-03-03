@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,19 @@
 
 #include "libft.h"
 
-int	ft_isdigit(int c);
-
-int	ft_isalnum(int c)
+void	*ft_memset(void *addr, int c, size_t n)
 {
-	if (ft_isdigit(c) || ft_isalpha(c))
-		return (1);
-	return (0);
+	size_t	i;
+	char	*location;
+
+	if (!addr)
+		return (NULL);
+	i = 0;
+	location = (char *)addr;
+	while (i < n)
+	{
+		location[i] = c;
+		i++;
+	}
+	return (addr);
 }

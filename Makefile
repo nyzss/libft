@@ -18,16 +18,17 @@ SRC_DIR = ./src/
 
 INCLUDES_DIR = ./includes/
 
-SRC_FILES = ft_isdigit.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isalnum.c \
-	ft_isprint.c \
-	ft_strlen.c \
-	ft_strlcat.c \
-	ft_memset.c \
-	ft_bzero.c \
-	ft_strlcpy.c 
+SRC_FILES = bzero.c \
+	isalnum.c \
+	isalpha.c \
+	isascii.c \
+	isdigit.c \
+	isprint.c \
+	strlcat.c \
+	strlcpy.c \
+	strlen.c \
+	memset.c \
+	memcpy.c \
 
 LIB = libft.a
 
