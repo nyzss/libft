@@ -31,6 +31,7 @@ SRC_FILES = bzero.c \
 	memcpy.c \
 	toupper.c \
 	tolower.c \
+	atoi.c \
 
 LIB = libft.a
 
