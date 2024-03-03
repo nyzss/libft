@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,26 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+#include "libft.h"
 
-int		ft_islower(int c);
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
-int		ft_isupper(int c);
-
-int		ft_isalpha(int c);
-
-int		ft_isdigit(int c);
-
-int		ft_isalnum(int c);
-
-int		ft_isascii(int c);
-
-int		ft_isprint(int c);
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-
-size_t	ft_strlen(const char *str);
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}

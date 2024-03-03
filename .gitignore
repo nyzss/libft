@@ -1,2 +1,6 @@
 */*.out
 */*.gch
+*/*.o
+*/*.a
+main
+.cache

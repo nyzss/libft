@@ -1,10 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
+/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-#include <stddef.h>
-
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < size)

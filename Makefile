@@ -11,6 +11,7 @@ SRC_FILES = ft_isdigit.c \
 	ft_isascii.c \
 	ft_isalnum.c \
 	ft_isprint.c \
+	ft_strlen.c \
 	ft_strlcpy.c 
 
 LIB = libft.a

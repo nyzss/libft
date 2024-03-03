@@ -1,0 +1,34 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/ft_strlen.o",
+      "src/ft_strlen.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/ft_strlen.c",
+    "output": "/home/nyzs/dev/libft/src/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-o",
+      "main",
+      "main.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/main.c",
+    "output": "/home/nyzs/dev/libft/main"
+  }
+]
