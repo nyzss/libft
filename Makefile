@@ -1,52 +1,43 @@
-#NAME = libft.a
-
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
-INCLUDES = ./includes/
+SRC_DIR = ./src/
 
-SRC = ./src/
+INCLUDES_DIR = ./includes/
 
-LIB_FILES = ft_isdigit.c \
+SRC_FILES = ft_isdigit.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isalnum.c \
 	ft_isprint.c \
-	ft_strlcpy.c \
+	ft_strlcpy.c 
 
-MAIN_FILES = main.c
+LIB = libft.a
 
-LIBRARY = libft.a
+SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
-NAME = main.out
+OBJS = ${SRC:.c=.o}
 
-SRCS = ${addprefix ${SRC}, ${LIB_FILES}}
+TARGET = main
 
-OBJS = ${SRCS:.c=.o}
+%.o: %.c
+	${CC} ${CFLAGS} -I ${INCLUDES_DIR} -c $< -o ${<:.c=.o}
 
-.c.o:
-	${CC} ${CFLAGS} -I ${INCLUDES} $< -c -o ${<:.c=.o}
+${TARGET}: main.c ${LIB}
+	${CC} ${CFLAGS} main.c -L. -lft -o ${TARGET}
 
-# ${NAME}: ${OBJS}
-# 	${CC} ${CLFLAGS} -I ${INCLUDES} ${OBJS} -o ${NAME}
+${LIB}: ${OBJS}
+	ar rcs ${LIB} ${OBJS}
 
-${LIBRARY}: ${OBJS}
-	ar rcs ${LIBRARY} ${OBJS}
-
-${NAME}: ${LIBRARY}
-	${CC} ${CLFLAGS} -l${LIBRARY} -I ${INCLUDES} ${MAIN_FILES} -o ${NAME}
-
-all: ${NAME}
+all: ${TARGET}
 
 clean:
 	rm -f ${OBJS}
 
 fclean: clean
-	rm -f ${NAME}
-	rm -f ${LIBRARY}
+	rm -f ${LIB} ${TARGET}
 
-re: fclean ${NAME}
+re: fclean all
 
 .PHONY: all clean fclean re
-
