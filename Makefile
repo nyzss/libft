@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: okoca <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/00/00 10:00:00 by okoca             #+#    #+#              #
+#    Updated: 2024/00/00 10:00:00 by okoca            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
@@ -13,6 +25,8 @@ SRC_FILES = ft_isdigit.c \
 	ft_isprint.c \
 	ft_strlen.c \
 	ft_strlcat.c \
+	ft_memset.c \
+	ft_bzero.c \
 	ft_strlcpy.c 
 
 LIB = libft.a
