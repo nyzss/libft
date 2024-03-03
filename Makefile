@@ -18,20 +18,24 @@ SRC_DIR = ./src/
 
 INCLUDES_DIR = ./includes/
 
-SRC_FILES = bzero.c \
+SRC_FILES =
+	atoi.c \
+	bzero.c \
 	isalnum.c \
 	isalpha.c \
 	isascii.c \
 	isdigit.c \
 	isprint.c \
+	memcpy.c \
+	memmove.c \
+	memset.c \
+	strchr.c \
 	strlcat.c \
 	strlcpy.c \
 	strlen.c \
-	memset.c \
-	memcpy.c \
-	toupper.c \
+	strrchr.c \
 	tolower.c \
-	atoi.c \
+	toupper.c \
 
 LIB = libft.a
 

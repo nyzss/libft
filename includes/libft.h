@@ -40,6 +40,10 @@ int		ft_isspace(int c);
 
 int		ft_atoi(const char *str);
 
+char	*ft_strchr(const char *str, int c);
+
+char	*ft_strrchr(const char *str, int c);
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -51,5 +55,7 @@ void	*ft_memset(void *addr, int c, size_t n);
 void	ft_bzero(void *addr, size_t n);
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 #endif
