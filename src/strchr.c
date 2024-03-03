@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                        :+:      :+:    :+:   */
+/*   strchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *str, int c)
 {
-	size_t		i;
-	char		*dst_c;
-	const char	*src_c = (const char *)src;
+	int	i;
 
-	dst_c = (char *)dest;
 	i = 0;
-	while (i < n)
+	while (str[i])
 	{
-		dst_c[i] = src_c[i];
+		if (str[i] == c)
+			return ((char *)&str[i]);
 		i++;
 	}
-	return (dest);
+	if (str[i] == c)
+		return ((char *)&str[i]);
+	return (NULL);
 }
