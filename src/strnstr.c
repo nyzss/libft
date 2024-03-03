@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcmp.c                                           :+:      :+:    :+:   */
+/*   strnstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,27 @@
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char *strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
+	size_t i;
+	size_t j;
 
 	i = 0;
-	while (i < n && (char *)&s1[i] == (char *)&s2[i])
+	if (!needle)
+		return ((char *)haystack);
+	while (i < len && haystack[i])
+	{
+		j = 0;
+		if (needle[i] == haystack[i])
+		{
+			while (needle[j] && needle[j] == haystack[j])
+			{
+				j++;
+			}
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
+		}
 		i++;
-	return ((s1 + i) - (s2 + i));
+	}
+	return (NULL);
 }
