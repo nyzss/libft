@@ -1,11 +1,22 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
+/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 
-int main(int argc, char **argv) {
-  if (argc < 2)
-    return (0);
-
-  printf("%d\n", ft_isalpha(argv[1][0]));
-  printf("%c\n", (argv[1][0]));
+int	main(int argc, char **argv)
+{
+	if (argc < 2)
+		return (0);
+	printf("%d\n", ft_isalpha(argv[1][0]));
+	printf("%c\n", (argv[1][0]));
 }
