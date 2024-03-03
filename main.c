@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "includes/libft.h"
+
+#include <string.h>
+
 #include <stdio.h>
 
 void	check_is(void)
@@ -47,11 +50,32 @@ void	check_str(void)
 {
 	char	*s1;
 
+
 	// char s2[100];
 	s1 = "Hello world!";
 	printf("\n  ------------------------------\n");
 	printf("\nString functions: \n\n");
+	printf(" --------\n");
 	printf("ft_strlen: %s -> %lu\n", s1, ft_strlen(s1));
+
+	printf("\n  -----------\n\n");
+
+	char	original_dst[100];
+	char	ft_dst[100];
+	char	*src;
+
+	int	original_ret;
+	int	ft_ret;
+	int	size;
+
+	src = "this is the source string.";
+	size = 15;
+	original_ret = strlcpy(original_dst, src, size);
+	ft_ret = strlcpy(ft_dst, src, size);
+
+	printf("FIRST --> strlcpy (original): '%s' -> return: %d \n", original_dst, original_ret);
+	printf("\n");
+	printf("SECOND -> ft_strlcpy  (mine): '%s' -> return: %d \n", ft_dst, ft_ret);
 	printf("\n  ------------------------------\n");
 }
 
