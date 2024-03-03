@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*memset(void *addr, int c, size_t n)
+void	*ft_memset(void *addr, int c, size_t n)
 {
 	size_t	i;
 	char	*location;

@@ -34,7 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 size_t	ft_strlen(const char *str);
 
-size_t	ft_memset(void *addr, int c, size_t n);
+void	*ft_memset(void *addr, int c, size_t n);
 
 void	ft_bzero(void *addr, size_t n);
 
