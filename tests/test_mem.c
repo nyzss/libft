@@ -88,10 +88,10 @@ void test_memcmp() {
     printf("\n   #### MEMCMP ####\n\n");
 
     const char *s1 = "Hello, World!";
-    const char *s2 = "Hello, Sun!";
+    const char *s2 = "Hello, World!l";
 
-    int original = memcmp(s1, s2, 7);
-    int custom = ft_memcmp(s1, s2, 7);
+    int original = memcmp(s1, s2, 13);
+    int custom = ft_memcmp(s1, s2, 13);
 
     printf("Original memcmp: %d\n", original);
     printf("Custom ft_memcmp: %d\n", custom);
