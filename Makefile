@@ -51,6 +51,7 @@ TESTS_DIR = ./tests/
 TESTS_FILES = test_str.c \
 	      test_mem.c \
 	      test_is.c \
+	      tests.c \
 
 TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
 

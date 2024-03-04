@@ -12,12 +12,12 @@
 
 #ifndef TESTS_H
 # define TESTS_H
+# include "libft.h"
 # include <bsd/string.h>
 # include <ctype.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include "libft.h"
 
 void	test_strlcat(const char *src, size_t size);
 
@@ -58,5 +58,11 @@ void	test_memcmp(void);
 void	test_calloc(void);
 
 void	print_memory(const void *mem, size_t size);
+
+void	test_is(void);
+
+void	test_str(void);
+
+void	test_mem(void);
 
 #endif
