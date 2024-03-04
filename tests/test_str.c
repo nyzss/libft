@@ -1,7 +1,4 @@
 #include "tests.h"
-#include <bsd/string.h>
-#include <stdio.h>
-#include <string.h>
 
 void	test_strlen(const char *str)
 {

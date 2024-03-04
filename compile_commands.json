@@ -315,12 +315,97 @@
       "./includes/",
       "-c",
       "-o",
+      "src/strnstr.o",
+      "src/strnstr.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strnstr.c",
+    "output": "/home/nyzs/dev/libft/src/strnstr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/strdup.o",
+      "src/strdup.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/strdup.c",
+    "output": "/home/nyzs/dev/libft/src/strdup.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "src/calloc.o",
+      "src/calloc.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/src/calloc.c",
+    "output": "/home/nyzs/dev/libft/src/calloc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
       "tests/test_str.o",
       "tests/test_str.c"
     ],
     "directory": "/home/nyzs/dev/libft",
     "file": "/home/nyzs/dev/libft/tests/test_str.c",
     "output": "/home/nyzs/dev/libft/tests/test_str.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "tests/test_mem.o",
+      "tests/test_mem.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/tests/test_mem.c",
+    "output": "/home/nyzs/dev/libft/tests/test_mem.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "tests/test_is.o",
+      "tests/test_is.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/tests/test_is.c",
+    "output": "/home/nyzs/dev/libft/tests/test_is.o"
   },
   {
     "arguments": [

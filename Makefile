@@ -47,6 +47,8 @@ SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 TESTS_DIR = ./tests/
 
 TESTS_FILES = test_str.c \
+	      test_mem.c \
+	      test_is.c \
 
 TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
 
