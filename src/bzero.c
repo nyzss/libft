@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *addr, size_t n)
 {
-	size_t	i;
-	char	*location;
-
-	i = 0;
-	location = (char *)addr;
-	while (i < n)
-	{
-		location[i] = '\0';
-		i++;
-	}
+	ft_memset(addr, 0, n);
 }

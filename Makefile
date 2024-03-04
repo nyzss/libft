@@ -38,6 +38,7 @@ SRC_FILES = atoi.c \
 	strncmp.c \
 	strnstr.c \
 	strdup.c \
+	calloc.c \
 
 LIB = libft.a
 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   calloc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,27 +12,13 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	*ft_calloc(size_t n, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	void	*allocated;
 
-	i = 0;
-	if (!needle)
-		return ((char *)haystack);
-	while (i < len && haystack[i])
-	{
-		j = 0;
-		if (needle[i] == haystack[i])
-		{
-			while (needle[j] && needle[j] == haystack[j])
-			{
-				j++;
-			}
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
-		}
-		i++;
-	}
-	return (NULL);
+	allocated = (void *)malloc(n * size);
+	if (!allocated)
+		return (NULL);
+	ft_bzero(allocated, (n * size));
+	return (allocated);
 }
