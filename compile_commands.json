@@ -308,6 +308,23 @@
   {
     "arguments": [
       "/usr/bin/cc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "./includes/",
+      "-c",
+      "-o",
+      "tests/test_str.o",
+      "tests/test_str.c"
+    ],
+    "directory": "/home/nyzs/dev/libft",
+    "file": "/home/nyzs/dev/libft/tests/test_str.c",
+    "output": "/home/nyzs/dev/libft/tests/test_str.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
       "-c",
       "-Wall",
       "-Werror",

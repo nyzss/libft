@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,29 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef TESTS_H
+# define TESTS_H
+# include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	size_t i;
-	size_t j;
+void	test_strlcat(const char *src, size_t size);
 
-	i = 0;
-	if (!needle)
-		return ((char *)haystack);
-	while (i < len && haystack[i])
-	{
-		j = 0;
-		if (needle[i] == haystack[i])
-		{
-			while (needle[j] && needle[j] == haystack[j])
-			{
-				j++;
-			}
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
-		}
-		i++;
-	}
-	return (NULL);
-}
+void	test_strlcpy(const char *src, size_t size);
+
+void	test_strlen(const char *str);
+
+void	test_strrchr(const char *s, int c);
+
+void	test_strnstr(const char *haystack, const char *needle, size_t len);
+
+void	test_strncmp(const char *s1, const char *s2, size_t n);
+
+void	test_strchr(const char *s, int c);
+
+#endif

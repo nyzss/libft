@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   strdup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,28 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strdup(const char *str)
 {
-	size_t i;
-	size_t j;
+	char	*new;
+	int		i;
 
 	i = 0;
-	if (!needle)
-		return ((char *)haystack);
-	while (i < len && haystack[i])
+	new = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	while (str[i])
 	{
-		j = 0;
-		if (needle[i] == haystack[i])
-		{
-			while (needle[j] && needle[j] == haystack[j])
-			{
-				j++;
-			}
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
-		}
+		new[i] = str[i];
 		i++;
 	}
-	return (NULL);
+	new[i] = '\0';
+	return (new);
 }

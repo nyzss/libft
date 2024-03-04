@@ -36,12 +36,20 @@ SRC_FILES = atoi.c \
 	tolower.c \
 	toupper.c \
 	strncmp.c \
+	strnstr.c \
+	strdup.c \
 
 LIB = libft.a
 
 SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
-OBJS = ${SRC:.c=.o}
+TESTS_DIR = ./tests/
+
+TESTS_FILES = test_str.c \
+
+TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
+
+OBJS = ${SRC:.c=.o} ${TESTS:.c=.o}
 
 TARGET = main
 
@@ -49,7 +57,7 @@ TARGET = main
 	${CC} ${CFLAGS} -I ${INCLUDES_DIR} -c $< -o ${<:.c=.o}
 
 ${TARGET}: main.c ${LIB}
-	${CC} ${CFLAGS} main.c -L. -lft -o ${TARGET}
+	${CC} ${CFLAGS} main.c -L. -lft -lbsd -o ${TARGET}
 
 ${LIB}: ${OBJS}
 	ar rcs ${LIB} ${OBJS}
@@ -65,3 +73,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

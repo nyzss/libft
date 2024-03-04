@@ -48,7 +48,7 @@ void	check_is(void)
 int	main(void)
 {
 	const char	*s1 = "Hello world!";
-	const char	*s2 = "Hello";
+const char *s2 = "Hello";
 	const char	*src = "this is the source string.";
 	const char	*haystack = "This is a haystack";
 	const char	*needle = "hay";
