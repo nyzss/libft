@@ -74,4 +74,8 @@ char	*ft_strtrim(char const *str, char const *set);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
+char	**ft_split(char const *str, char c);
+
+char	*ft_itoa(int n);
+
 #endif
