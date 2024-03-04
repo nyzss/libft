@@ -42,6 +42,8 @@ SRC_FILES = atoi.c \
 	strdup.c \
 	calloc.c \
 	ft_substr.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
 
 LIB = libft.a
 

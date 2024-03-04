@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,14 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include "includes/tests.h"
+#include "libft.h"
 
-int	main(void)
+int	is_set(char c, const char *set)
 {
-	test_str();
-	test_is();
-	test_mem();
+	int	i;
 
-	// printf("%s\n", ft_strtrim("-----hello world----",  "-"));
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *str, char const *set)
+{
+	int		i;
+	int		j;
+	int		k;
+	int		end;
+	char	*new;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	end = ft_strlen(str);
+	while (str[i] && is_set(str[i], set))
+		i++;
+	while (str[end - j - 1] && is_set(str[end - j - 1], set))
+		j++;
+	new = (char *)malloc(sizeof(char) * (end - j - i + 1));
+	while (k < end - j - i)
+	{
+		new[k] = str[i + k];
+		k++;
+	}
+	new[k] = '\0';
+	return (new);
 }
