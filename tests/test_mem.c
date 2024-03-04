@@ -8,7 +8,6 @@ void print_memory(const void *mem, size_t size) {
     printf("\n");
 }
 
-// Test function for ft_memset
 void test_memset() {
     printf("\n   #### MEMSET ####\n\n");
 
@@ -25,7 +24,6 @@ void test_memset() {
     print_memory(custom, 5);
 }
 
-// Test function for ft_bzero
 void test_bzero() {
     printf("\n   #### BZERO ####\n\n");
 
@@ -42,7 +40,6 @@ void test_bzero() {
     printf("Custom ft_bzero: %s\n", custom);
 }
 
-// Test function for ft_memcpy
 void test_memcpy() {
     printf("\n   #### MEMCPY ####\n\n");
 
@@ -58,7 +55,6 @@ void test_memcpy() {
     printf("Custom ft_memcpy: %s\n", dest_custom);
 }
 
-// Test function for ft_memmove
 void test_memmove() {
     printf("\n   #### MEMMOVE ####\n\n");
 
@@ -75,34 +71,32 @@ void test_memmove() {
 }
 
 // Test function for ft_memchr
-// void test_memchr() {
-//     printf("\n   #### MEMCHR ####\n\n");
-//
-//     const char *s = "Hello, World!";
-//     int c = 'o';
-//
-//     const void *original = memchr(s, c, 7);
-//     const void *custom = ft_memchr(s, c, 7);
-//
-//     printf("Original memchr: %s\n", (char *)original);
-//     printf("Custom ft_memchr: %s\n", (char *)custom);
-// }
+void test_memchr() {
+    printf("\n   #### MEMCHR ####\n\n");
 
-// Test function for ft_memcmp
-// void test_memcmp() {
-//     printf("\n   #### MEMCMP ####\n\n");
-//
-//     const char *s1 = "Hello, World!";
-//     const char *s2 = "Hello, Sun!";
-//
-//     int original = memcmp(s1, s2, 7);
-//     int custom = ft_memcmp(s1, s2, 7);
-//
-//     printf("Original memcmp: %d\n", original);
-//     printf("Custom ft_memcmp: %d\n", custom);
-// }
+    const char *s = "Hello, World!";
+    int c = 'o';
 
-// Test function for ft_calloc
+    const void *original = memchr(s, c, 7);
+    const void *custom = ft_memchr(s, c, 7);
+
+    printf("Original memchr: %s\n", (char *)original);
+    printf("Custom ft_memchr: %s\n", (char *)custom);
+}
+
+void test_memcmp() {
+    printf("\n   #### MEMCMP ####\n\n");
+
+    const char *s1 = "Hello, World!";
+    const char *s2 = "Hello, Sun!";
+
+    int original = memcmp(s1, s2, 7);
+    int custom = ft_memcmp(s1, s2, 7);
+
+    printf("Original memcmp: %d\n", original);
+    printf("Custom ft_memcmp: %d\n", custom);
+}
+
 void test_calloc() {
     printf("\n   #### CALLOC ####\n\n");
 

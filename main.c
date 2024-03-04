@@ -62,8 +62,8 @@ void	test_mem(void)
 	test_bzero();
 	test_memcpy();
 	test_memmove();
-	//test_memchr();
-	//test_memcmp();
+	test_memchr();
+	test_memcmp();
 	test_calloc();
 	printf("\n  ------------------------------\n");
 }

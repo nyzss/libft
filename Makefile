@@ -28,6 +28,8 @@ SRC_FILES = atoi.c \
 	memcpy.c \
 	memmove.c \
 	memset.c \
+	memchr.c \
+	memcmp.c \
 	strchr.c \
 	strlcat.c \
 	strlcpy.c \
