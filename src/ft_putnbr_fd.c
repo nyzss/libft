@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		nbr *= -1;
 	}
-	if (nbr > 0)
+	if (nbr / 10 > 0)
 		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((nbr + '0'), fd);
+	ft_putchar_fd(((nbr % 10) + '0'), fd);
 }

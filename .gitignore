@@ -6,3 +6,4 @@
 *.a
 main
 .cache
+put*.txt

@@ -84,6 +84,7 @@ all: ${TARGET}
 
 clean:
 	rm -f ${OBJS}
+	rm -f put*.txt
 
 fclean: clean
 	rm -f ${LIB} ${TARGET}

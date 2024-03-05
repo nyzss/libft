@@ -47,12 +47,8 @@ int	main(void)
 	// test_str();
 	// test_is();
 	// test_mem();
-	//test_put();
+	test_put();
 	// test_split("hello world wowzies", 'l');
 	// test_itoa(-2147483648);
 	// printf("%s\n", ft_strtrim("-----hello world----",  "-"));
-
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(10423, 1);
-
 }
