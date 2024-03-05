@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,51 +12,16 @@
 
 #include "libft.h"
 
-int	count_digits(long *n, int *negative)
+void	ft_striteri(char *str, void (*f)(unsigned int, char *))
 {
-	int		count;
-	long	nbr;
-
-	nbr = *n;
-	count = 0;
-	if (nbr < 0)
-	{
-		*negative = 1;
-		nbr *= -1;
-		count++;
-		*n = nbr;
-	}
-	if (nbr == 0)
-		count++;
-	while (nbr != 0)
-	{
-		count++;
-		nbr /= 10;
-	}
-	return (count);
-}
-
-char	*ft_itoa(int n)
-{
-	int		i;
-	int		n_digit;
-	char	*new;
-	int		negative;
-	long	nbr;
+	int	i;
 
 	i = 0;
-	nbr = n;
-	n_digit = count_digits(&nbr, &negative);
-	new = (char *)malloc(sizeof(char) * (n_digit + 1));
-	if (!new)
-		return (NULL);
-	while (i < n_digit)
+	if (!str || !f)
+		return ;
+	while (str[i])
 	{
-		new[n_digit - i - 1] = (nbr % 10) + '0';
-		nbr /= 10;
+		f(i, &str[i]);
 		i++;
 	}
-	if (negative == 1)
-		new[0] = '-';
-	return (new);
 }

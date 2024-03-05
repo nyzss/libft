@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,51 +12,22 @@
 
 #include "libft.h"
 
-int	count_digits(long *n, int *negative)
-{
-	int		count;
-	long	nbr;
-
-	nbr = *n;
-	count = 0;
-	if (nbr < 0)
-	{
-		*negative = 1;
-		nbr *= -1;
-		count++;
-		*n = nbr;
-	}
-	if (nbr == 0)
-		count++;
-	while (nbr != 0)
-	{
-		count++;
-		nbr /= 10;
-	}
-	return (count);
-}
-
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
 	int		i;
-	int		n_digit;
 	char	*new;
-	int		negative;
-	long	nbr;
 
 	i = 0;
-	nbr = n;
-	n_digit = count_digits(&nbr, &negative);
-	new = (char *)malloc(sizeof(char) * (n_digit + 1));
+	if (!str || !f)
+		return (NULL);
+	new = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
 	if (!new)
 		return (NULL);
-	while (i < n_digit)
+	while (str[i])
 	{
-		new[n_digit - i - 1] = (nbr % 10) + '0';
-		nbr /= 10;
+		new[i] = f(i, str[i]);
 		i++;
 	}
-	if (negative == 1)
-		new[0] = '-';
+	new[i] = '\0';
 	return (new);
 }

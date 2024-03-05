@@ -78,4 +78,8 @@ char	**ft_split(char const *str, char c);
 
 char	*ft_itoa(int n);
 
+void	ft_striteri(char *str, void (*f)(unsigned int, char *));
+
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char));
+
 #endif
