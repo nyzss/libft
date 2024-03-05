@@ -54,3 +54,25 @@ void	test_mem(void)
 	test_calloc();
 	printf("\n  ------------------------------\n");
 }
+
+void	test_put(void)
+{
+	char		character;
+	const char	*string = "Hello, World!";
+	const char	*stringWithNewline = "This is a line.";
+	int			number;
+
+	printf("\n  ------------------------------\n");
+	printf("File Descriptor Functions:\n\n");
+	// Example 1: Testing ft_putchar_fd
+	character = 'A';
+	test_putchar_fd(character, "putchar.txt");
+	// Example 2: Testing ft_putstr_fd
+	test_putstr_fd(string, "putstr.txt");
+	// Example 3: Testing ft_putendl_fd
+	test_putendl_fd(stringWithNewline, "putendl.txt");
+	// Example 4: Testing ft_putnbr_fd
+	number = 12345;
+	test_putnbr_fd(number, "putnbr.txt");
+	printf("\n  ------------------------------\n");
+}

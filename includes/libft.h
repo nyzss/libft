@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_islower(int c);
 
@@ -81,5 +82,13 @@ char	*ft_itoa(int n);
 void	ft_striteri(char *str, void (*f)(unsigned int, char *));
 
 char	*ft_strmapi(char const *str, char (*f)(unsigned int, char));
+
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putendl_fd(char *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

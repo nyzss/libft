@@ -48,6 +48,10 @@ SRC_FILES = atoi.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
 
 LIB = libft.a
 
@@ -58,6 +62,7 @@ TESTS_DIR = ./tests/
 TESTS_FILES = test_str.c \
 	      test_mem.c \
 	      test_is.c \
+	      test_put.c \
 	      tests.c \
 
 TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}

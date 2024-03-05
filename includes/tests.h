@@ -15,6 +15,7 @@
 # include "libft.h"
 # include <bsd/string.h>
 # include <ctype.h>
+# include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -43,6 +44,14 @@ void	test_isalnum(char number, char non_print);
 
 void	test_isascii(char lowcase_letter, int outside_ascii);
 
+void	test_putchar_fd(char c, const char *filename);
+
+void	test_putstr_fd(const char *s, const char *filename);
+
+void	test_putendl_fd(const char *s, const char *filename);
+
+void	test_putnbr_fd(int n, const char *filename);
+
 void	test_memset(void);
 
 void	test_bzero(void);
@@ -64,5 +73,7 @@ void	test_is(void);
 void	test_str(void);
 
 void	test_mem(void);
+
+void	test_put(void);
 
 #endif
