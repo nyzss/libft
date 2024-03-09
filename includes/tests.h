@@ -76,4 +76,8 @@ void	test_mem(void);
 
 void	test_put(void);
 
+void test_split(const char *str, char delimiter);
+
+void test_itoa(int n);
+
 #endif

@@ -1,5 +1,33 @@
 #include "tests.h"
 
+void	test_split(const char *str, char delimiter)
+{
+	char	**result;
+
+	printf("\n   #### FT_SPLIT ####\n\n");
+	result = ft_split(str, delimiter);
+	printf("Original string: %s\n", str);
+	printf("Delimiter: '%c'\n", delimiter);
+	printf("Result:\n");
+	for (int i = 0; result[i] != NULL; i++)
+	{
+		printf("[%d] \"%s\"\n", i, result[i]);
+		free(result[i]);
+	}
+	free(result);
+}
+
+void	test_itoa(int n)
+{
+	char	*result;
+
+	printf("\n   #### FT_ITOA ####\n\n");
+	result = ft_itoa(n);
+	printf("Original integer: %d\n", n);
+	printf("Resulting string: \"%s\"\n", result);
+	free(result);
+}
+
 void	test_strlen(const char *str)
 {
 	printf("ft_strlen: %s -> %lu\n", str, ft_strlen(str));
