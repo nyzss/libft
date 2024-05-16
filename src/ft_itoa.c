@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count_digits(long *n, int *negative)
+static int	count_digits(long *n, int *negative)
 {
 	int		count;
 	long	nbr;

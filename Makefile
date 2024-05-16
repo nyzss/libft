@@ -18,29 +18,29 @@ SRC_DIR = ./src/
 
 INCLUDES_DIR = ./includes/
 
-SRC_FILES = atoi.c \
-	bzero.c \
-	isalnum.c \
-	isalpha.c \
-	isascii.c \
-	isdigit.c \
-	isprint.c \
-	memcpy.c \
-	memmove.c \
-	memset.c \
-	memchr.c \
-	memcmp.c \
-	strchr.c \
-	strlcat.c \
-	strlcpy.c \
-	strlen.c \
-	strrchr.c \
-	tolower.c \
-	toupper.c \
-	strncmp.c \
-	strnstr.c \
-	strdup.c \
-	calloc.c \
+SRC_FILES = ft_atoi.c \
+	ft_bzero.c \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_memset.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_strchr.c \
+	ft_strlcat.c \
+	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strrchr.c \
+	ft_tolower.c \
+	ft_toupper.c \
+	ft_strncmp.c \
+	ft_strnstr.c \
+	ft_strdup.c \
+	ft_calloc.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
@@ -51,7 +51,7 @@ SRC_FILES = atoi.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
+	ft_putnbr_fd.c
 
 LIB = libft.a
 
@@ -63,7 +63,7 @@ TESTS_FILES = test_str.c \
 	      test_mem.c \
 	      test_is.c \
 	      test_put.c \
-	      tests.c \
+	      tests.c
 
 TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
 

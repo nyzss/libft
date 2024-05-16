@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,36 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isspace(int c)
+static int	ft_isupper(int c)
 {
-	if (c == ' ' || (c >= 9 && c <= 13))
+	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+static int	ft_islower(int c)
 {
-	int	i;
-	int	sign;
-	int	result;
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
+}
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		result = (result * 10) + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+int	ft_isalpha(int c)
+{
+	if (ft_isupper(c) || ft_islower(c))
+		return (1);
+	return (0);
 }
