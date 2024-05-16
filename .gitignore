@@ -7,3 +7,5 @@
 main
 .cache
 put*.txt
+./libftTester
+./libft-war-machine
