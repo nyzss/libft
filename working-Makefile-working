@@ -57,38 +57,37 @@ LIB = libft.a
 
 SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
-# TESTS_DIR = ./tests/
+TESTS_DIR = ./tests/
 
-# TESTS_FILES = test_str.c \
-# 	      test_mem.c \
-# 	      test_is.c \
-# 	      test_put.c \
-# 	      tests.c
+TESTS_FILES = test_str.c \
+	      test_mem.c \
+	      test_is.c \
+	      test_put.c \
+	      tests.c
 
-# TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
+TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
 
-OBJS = ${SRC:.c=.o} #${TESTS:.c=.o}
+OBJS = ${SRC:.c=.o} ${TESTS:.c=.o}
 
-# TARGET = main
+TARGET = main
 
 %.o: %.c
 	${CC} ${CFLAGS} -I ${INCLUDES_DIR} -c $< -o ${<:.c=.o}
 
-# ${TARGET}: main.c ${LIB}
-# 	${CC} ${CFLAGS} main.c -L. -lft -lbsd -o ${TARGET}
+${TARGET}: main.c ${LIB}
+	${CC} ${CFLAGS} main.c -L. -lft -lbsd -o ${TARGET}
 
 ${LIB}: ${OBJS}
 	ar rcs ${LIB} ${OBJS}
 
-all: ${LIB} #${TARGET}
+all: ${TARGET}
 
 clean:
 	rm -f ${OBJS}
 	rm -f put*.txt
 
 fclean: clean
-	rm -f ${LIB} 
-#	${TARGET}
+	rm -f ${LIB} ${TARGET}
 
 re: fclean all
 
