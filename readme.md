@@ -2,3 +2,5 @@
 
 check the mem functions again
 especially memcmp, memchr etc..
+
+redo memmove
