@@ -16,9 +16,23 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*allocated;
 
+	if (n == 0 || size == 0)
+	{
+		allocated = (void*)malloc(1);
+		ft_bzero(allocated, 1);
+		return (allocated);
+	}
+	else if (n * size < size || n * size < n)
+		return (NULL);
 	allocated = (void *)malloc(n * size);
 	if (!allocated)
 		return (NULL);
 	ft_bzero(allocated, (n * size));
 	return (allocated);
 }
+
+/*
+int main()
+{
+
+}*/
