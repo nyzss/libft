@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void *old_ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char *destination;
 	unsigned char *source;
@@ -34,18 +34,32 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-void *exp_ft_memmove(void *dest, const void *src, size_t n)
+// if source starts before destination starts, and (source + n) starts after destination starts, we begin copying memory from the end of source
+
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char destination;
-	unsigned char source;
+	unsigned char *destination;
+	unsigned char *source;
 	size_t i;
 
+	destination = dest;
+	source = (unsigned char *)src;
 	if (!dest && !src)
+		return (NULL);
+	else if (dest == src)
+		return (dest);
+	while (i < n)
 	{
-		
+		if (source < destination)
+			destination[i] = source[n - i];
+		else
+			destination[i] = source[n + i];
+		i++;
 	}
+	return (dest);
 }
 
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -54,22 +68,24 @@ int main()
 	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
 	char real[] = {67, 68, 67, 68, 69, 0, 45};
 
-	//char result_we_want[] = {67, 67, 68, 68, 69, 0, 45};
+	// char result_we_want[] = {67, 67, 68, 68, 69, 0, 45};
 
 	ft_memmove(sResult + 1, sResult, 2);
-	memmove(real + 1, sResult, 2);
+	memmove(real + 1, real, 2);
 
 	int i = 0;
 	while (i < 7)
 	{
 		if (sResult[i] < 10 && real[i] < 10)
 			printf("0%d - 0%d", sResult[i], real[i]);
-		else {
+		else
+		{
 			printf("%d - %d", sResult[i], real[i]);
 		}
 		if (sResult[i] != real[i])
 			printf(" | NOT SAME\n");
-		else {
+		else
+		{
 			printf("\n");
 		}
 		i++;
@@ -77,6 +93,7 @@ int main()
 	// should return 1 if it works
 	printf("second check: %d\n", memcmp(sResult, real, 7));
 }
+*/
 
 /*
 	//4
