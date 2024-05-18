@@ -12,6 +12,33 @@
 
 #include "libft.h"
 
+// if source starts before destination starts,
+// and (source + n) starts after destination starts,
+// we begin copying memory from the end of source
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*destination;
+	unsigned char	*source;
+	size_t			i;
+
+	i = 0;
+	destination = dest;
+	source = (unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
+	while (i < n)
+	{
+		if (source < destination)
+			destination[n - i - 1] = source[n - i - 1];
+		else
+			destination[i] = source[i];
+		i++;
+	}
+	return (dest);
+}
+
+/*
 void *old_ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char *destination;
@@ -33,31 +60,9 @@ void *old_ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+*/
 
-// if source starts before destination starts, and (source + n) starts after destination starts, we begin copying memory from the end of source
-
-void *ft_memmove(void *dest, const void *src, size_t n)
-{
-	unsigned char *destination;
-	unsigned char *source;
-	size_t i;
-
-	i = 0;
-	destination = dest;
-	source = (unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
-	while (i < n)
-	{
-		if (source < destination)
-			destination[n - i - 1] = source[n - i - 1];
-		else
-			destination[i] = source[i];
-		i++;
-	}
-	return (dest);
-}
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -99,42 +104,14 @@ int main()
 	printf("\nworks: %d\n", !memcmp(my_func, real_func, 7));
 }
 
-/*
-	//4
-	 check(ft_memmove(sResult + 1, sResult, 2) == sResult + 1 && !memcmp(sResult, sResult2, 7)); showLeaks(); //reverse
-
-	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
-	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
 */
 
 /*
-void    *ft_memmove(void *dest, const void *src, size_t n)
-{
-		size_t                  i;
-		const char      *from;
-		char                    *to;
+	//4
+	test qui ne passe pas:
+	 check(ft_memmove(sResult + 1, sResult, 2) == sResult + 1 && 
+	 !memcmp(sResult, sResult2, 7)); showLeaks(); //reverse
 
-		from = src;
-		to = dest;
-		if (to > from)
-		{
-				i = n;
-				while (i > 0)
-				{
-						to[i - 1] = from[i - 1];
-						i--;
-				}
-				to[i] = from[i];
-		}
-		else
-		{
-				i = 0;
-				while (i < n)
-				{
-						to[i] = from[i];
-						i++;
-				}
-		}
-		return (dest);
-}
+	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
+	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
 */
