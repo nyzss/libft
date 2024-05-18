@@ -42,47 +42,52 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char *source;
 	size_t i;
 
+	i = 0;
 	destination = dest;
 	source = (unsigned char *)src;
 	if (!dest && !src)
 		return (NULL);
-	else if (dest == src)
-		return (dest);
 	while (i < n)
 	{
 		if (source < destination)
-			destination[i] = source[n - i];
+			destination[n - i - 1] = source[n - i - 1];
 		else
-			destination[i] = source[n + i];
+			destination[i] = source[i];
 		i++;
 	}
 	return (dest);
 }
 
-/*
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
-	char real[] = {67, 68, 67, 68, 69, 0, 45};
+	int i = 0;
+	char my_func[] = {67, 68, 67, 68, 69, 0, 45};
+	while (i < 7)
+	{
+		printf("%d ", my_func[i]);
+		i++;
+	}
+	printf("\n\n");
+	char real_func[] = {67, 68, 67, 68, 69, 0, 45};
 
 	// char result_we_want[] = {67, 67, 68, 68, 69, 0, 45};
 
-	ft_memmove(sResult + 1, sResult, 2);
-	memmove(real + 1, real, 2);
+	ft_memmove(my_func + 1, my_func, 2);
+	memmove(real_func + 1, real_func, 2);
 
-	int i = 0;
+	i = 0;
 	while (i < 7)
 	{
-		if (sResult[i] < 10 && real[i] < 10)
-			printf("0%d - 0%d", sResult[i], real[i]);
+		if (my_func[i] < 10 && real_func[i] < 10)
+			printf("0%d - 0%d", my_func[i], real_func[i]);
 		else
 		{
-			printf("%d - %d", sResult[i], real[i]);
+			printf("%d - %d", my_func[i], real_func[i]);
 		}
-		if (sResult[i] != real[i])
+		if (my_func[i] != real_func[i])
 			printf(" | NOT SAME\n");
 		else
 		{
@@ -91,9 +96,8 @@ int main()
 		i++;
 	}
 	// should return 1 if it works
-	printf("second check: %d\n", memcmp(sResult, real, 7));
+	printf("\nworks: %d\n", !memcmp(my_func, real_func, 7));
 }
-*/
 
 /*
 	//4
