@@ -34,6 +34,18 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
+void *exp_ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char destination;
+	unsigned char source;
+	size_t i;
+
+	if (!dest && !src)
+	{
+		
+	}
+}
+
 #include <stdio.h>
 #include <string.h>
 
