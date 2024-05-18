@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/18 23:22:13 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/18 23:23:46 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	if (needle[0] == '\0')
-		return ((char*)haystack);
+		return ((char *)haystack);
 	while (i < len && haystack[i])
 	{
 		j = 0;
@@ -34,13 +34,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-
-  /*
+/*
 		if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "", 10)))
 			ft_print_result("NULL");
-  */
-
+*/
 /*
 #include <stdio.h>
 #include <bsd/string.h>
@@ -66,4 +63,3 @@ check(ft_strnstr(empty, "", -1) == empty); good
 check(ft_strnstr(empty, "", 0) == empty); good
 check(ft_strnstr(haystack, "cd", 8) == NULL);
 */
-
