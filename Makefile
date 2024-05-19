@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: okoca <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/00/00 10:00:00 by okoca             #+#    #+#              #
-#    Updated: 2024/00/00 10:00:00 by okoca            ###   ########.fr        #
+#    Created: Invalid date        by okoca             #+#    #+#              #
+#    Updated: 2024/05/18 23:28:50 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,9 +85,10 @@ all: ${LIB} #${TARGET}
 clean:
 	rm -f ${OBJS}
 	rm -f put*.txt
+	rm -f ${SRC_DIR}*.out
 
 fclean: clean
-	rm -f ${LIB} 
+	rm -f ${LIB}
 #	${TARGET}
 
 re: fclean all
