@@ -10,3 +10,5 @@ put*.txt
 libftTester
 libft-war-machine
 libft-unit-test
+*.o
+*.out

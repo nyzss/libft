@@ -6,17 +6,17 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/18 23:28:50 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/19 16:01:57 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
-
 SRC_DIR = ./src/
 
 INCLUDES_DIR = ./includes/
+
+CFLAGS = -Wall -Werror -Wextra -I ${INCLUDES_DIR} -c
 
 SRC_FILES = ft_atoi.c \
 	ft_bzero.c \
@@ -72,7 +72,7 @@ OBJS = ${SRC:.c=.o} #${TESTS:.c=.o}
 # TARGET = main
 
 %.o: %.c
-	${CC} ${CFLAGS} -I ${INCLUDES_DIR} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} $< -o ${<:.c=.o}
 
 # ${TARGET}: main.c ${LIB}
 # 	${CC} ${CFLAGS} main.c -L. -lft -lbsd -o ${TARGET}
@@ -81,6 +81,10 @@ ${LIB}: ${OBJS}
 	ar rcs ${LIB} ${OBJS}
 
 all: ${LIB} #${TARGET}
+
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRC)
+	gcc -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f ${OBJS}

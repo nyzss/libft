@@ -43,6 +43,8 @@ char	*ft_strtrim(char const *str, char const *set)
 	while (str[end - j - 1] && is_set(str[end - j - 1], set))
 		j++;
 	new = (char *)malloc(sizeof(char) * (end - j - i + 1));
+	if (!new)
+		return (NULL);
 	while (k < end - j - i)
 	{
 		new[k] = str[i + k];

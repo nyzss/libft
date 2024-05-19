@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/19 16:18:47 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	count_digits(long *n, int *negative)
 
 	nbr = *n;
 	count = 0;
+	if (nbr == 0)
+		return (1);
 	if (nbr < 0)
 	{
 		*negative = 1;
@@ -26,8 +28,6 @@ static int	count_digits(long *n, int *negative)
 		count++;
 		*n = nbr;
 	}
-	if (nbr == 0)
-		count++;
 	while (nbr != 0)
 	{
 		count++;
@@ -58,5 +58,6 @@ char	*ft_itoa(int n)
 	}
 	if (negative == 1)
 		new[0] = '-';
+	new[n_digit] = '\0';
 	return (new);
 }
