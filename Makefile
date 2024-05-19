@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/19 23:04:19 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/19 23:18:16 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,9 @@ SRC_FILES = ft_atoi.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-BONUS_FILES = ft_lstnew_bonus.c
+BONUS_FILES = ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c
 
 BONUS = ${addprefix ${SRC_DIR}, ${BONUS_FILES}}
 
