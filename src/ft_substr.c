@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (start >= ft_strlen(s))
+		len = 0;
 	new_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new_str)
 		return (NULL);
@@ -29,3 +31,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new_str[len] = '\0';
 	return (new_str);
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+	char *str = "01234";
+	size_t size = 10;
+
+	char *ret = ft_substr(str, 10, size);
+
+	printf("mine result: \"%s\"\n", ret);
+	printf("real result: \"%s\"\n", "");
+}
+*/
+

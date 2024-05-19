@@ -1,6 +1,7 @@
 */*.out
 */*.gch
 */*.o
+*/*.so
 */*.a
 */*.a
 *.a
@@ -12,3 +13,4 @@ libft-war-machine
 libft-unit-test
 *.o
 *.out
+*.so
