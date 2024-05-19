@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/19 16:34:11 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// if (!addr)
+// 	return (NULL);
+// i was told to remove these protections.
 
 void	*ft_memset(void *addr, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*location;
 
-	if (!addr)
-		return (NULL);
 	i = 0;
 	location = (unsigned char *)addr;
 	while (i < n)

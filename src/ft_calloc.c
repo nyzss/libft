@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/18 23:24:22 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/19 16:53:22 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	*ft_calloc(size_t n, size_t size)
 	ft_bzero(allocated, (n * size));
 	return (allocated);
 }
+
+// le deuxieme else if: total_size / n == size
 
 /*
 int main()

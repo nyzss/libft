@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/19 16:01:57 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/19 16:31:53 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,8 +88,10 @@ so:
 
 clean:
 	rm -f ${OBJS}
+	rm -f *.o
 	rm -f put*.txt
 	rm -f ${SRC_DIR}*.out
+	rm -f *.so
 
 fclean: clean
 	rm -f ${LIB}

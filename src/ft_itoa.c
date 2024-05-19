@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/19 16:18:47 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/19 19:31:59 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	nbr = n;
+	negative = 0;
 	n_digit = count_digits(&nbr, &negative);
 	new = (char *)malloc(sizeof(char) * (n_digit + 1));
 	if (!new)
@@ -61,3 +62,17 @@ char	*ft_itoa(int n)
 	new[n_digit] = '\0';
 	return (new);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	char	*i1 = ft_itoa(-623);
+	char	*i2 = ft_itoa(156);
+	char	*i3 = ft_itoa(-0);
+
+	printf("1: %s\n", i1);
+	printf("2: %s\n", i2);
+	printf("3: %s\n", i3);
+}
+*/
