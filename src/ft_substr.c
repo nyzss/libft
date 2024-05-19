@@ -46,4 +46,3 @@ int main()
 	printf("real result: \"%s\"\n", "");
 }
 */
-

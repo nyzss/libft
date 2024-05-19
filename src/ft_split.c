@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/19 22:13:15 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,20 @@ char	**ft_split(char const *str, char c)
 	}
 	return (result);
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+	printf("hell owlrd");
+	char	**expected = ft_split("\0aa\0bbb", '\0');
+
+	int i = 0;
+	while (expected[i])
+	{
+		printf("%s\n", expected[i]);
+		i++;
+	}
+}
+*/
