@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/19 16:31:53 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/19 23:04:19 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,10 @@ SRC_FILES = ft_atoi.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
+BONUS_FILES = ft_lstnew_bonus.c
+
+BONUS = ${addprefix ${SRC_DIR}, ${BONUS_FILES}}
+
 LIB = libft.a
 
 SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
@@ -69,6 +73,8 @@ SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
 OBJS = ${SRC:.c=.o} #${TESTS:.c=.o}
 
+BONUS_OBJS = ${BONUS:.c=.o}
+
 # TARGET = main
 
 %.o: %.c
@@ -82,12 +88,16 @@ ${LIB}: ${OBJS}
 
 all: ${LIB} #${TARGET}
 
+bonus: ${BONUS_OBJS}
+	ar rcs ${LIB} ${BONUS_OBJS}
+
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRC)
 	gcc -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f ${OBJS}
+	rm -f ${BONUS_OBJS}
 	rm -f *.o
 	rm -f put*.txt
 	rm -f ${SRC_DIR}*.out
