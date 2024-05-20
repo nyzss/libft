@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/19 22:13:15 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/20 11:29:09 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,16 @@ static char	*ft_strdupsep(char *first, char sep)
 	return (new);
 }
 
+int	handle_null(char **result, char *str, char c)
+{
+	if (count_words(str, c) == 0)
+	{
+		*result = NULL;
+		return (1);
+	}
+	return (0);
+}
+
 char	**ft_split(char const *str, char c)
 {
 	int		i;
@@ -67,6 +77,8 @@ char	**ft_split(char const *str, char c)
 	r_index = 0;
 	result = (char **)malloc(sizeof(char *) * (count_words((char *)str, c)
 				+ 1));
+	if (handle_null(result, (char *)str, c) == 1)
+		return (result);
 	if (!result)
 		return (NULL);
 	while (str[i])
@@ -83,19 +95,21 @@ char	**ft_split(char const *str, char c)
 	return (result);
 }
 
-/*
-#include <stdio.h>
+// int main()
+// {
+// 	char	**expected = ft_split("\0aa\0bbb", '\0');
 
-int main()
-{
-	printf("hell owlrd");
-	char	**expected = ft_split("\0aa\0bbb", '\0');
+// 	// int i = 0;
+// 	// while (expected[i])
+// 	// {
+// 	// 	printf("wow: %s\n", expected[i]);
+// 	// 	i++;
+// 	// }
 
-	int i = 0;
-	while (expected[i])
-	{
-		printf("%s\n", expected[i]);
-		i++;
-	}
-}
-*/
+// 	for (int i = 0; expected[i]; i++)
+// 	{
+// 		if (expected[i] != NULL)
+// 			printf("test failed");
+// 	}
+// 	printf("test success");
+// }

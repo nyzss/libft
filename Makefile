@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/19 23:52:35 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/20 10:53:28 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,12 +96,12 @@ ${LIB}: ${OBJS}
 
 all: ${LIB} #${TARGET}
 
-bonus: ${BONUS_OBJS}
-	ar rcs ${LIB} ${BONUS_OBJS}
+bonus: ${OBJS} ${BONUS_OBJS}
+	ar rcs ${LIB} ${OBJS} ${BONUS_OBJS}
 
 so:
-	$(CC) -fPIC $(CFLAGS) $(SRC)
-	gcc -shared -o libft.so $(OBJS)
+	$(CC) -fPIC $(CFLAGS) $(SRC) ${BONUS}
+	gcc -shared -o libft.so $(OBJS) ${BONUS_OBJS}
 
 clean:
 	rm -f ${OBJS}

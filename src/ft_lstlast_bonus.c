@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 23:20:40 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/19 23:22:01 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/20 10:54:46 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*tmp;
 
+	if (!lst)
+		return (NULL);
 	tmp = lst;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
