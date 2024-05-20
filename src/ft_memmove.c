@@ -1,13 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
-/*                                                                  =         */
+/*   Updated: 2024/05/20 11:46:43 by okoca            ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -103,15 +103,15 @@ int main()
 	// should return 1 if it works
 	printf("\nworks: %d\n", !memcmp(my_func, real_func, 7));
 }
-
 */
 
 /*
 	//4
 	test qui ne passe pas:
-	 check(ft_memmove(sResult + 1, sResult, 2) == sResult + 1 && 
+	 check(ft_memmove(sResult + 1, sResult, 2) == sResult + 1 &&
 	 !memcmp(sResult, sResult2, 7)); showLeaks(); //reverse
 
 	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
 	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
 */
+

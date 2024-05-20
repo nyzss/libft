@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/20 11:29:09 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/20 12:00:57 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,24 +92,51 @@ char	**ft_split(char const *str, char c)
 			r_index++;
 		}
 	}
+	result[r_index] = NULL;
 	return (result);
 }
 
-// int main()
-// {
-// 	char	**expected = ft_split("\0aa\0bbb", '\0');
+/*
+#include <stdio.h>
 
-// 	// int i = 0;
-// 	// while (expected[i])
-// 	// {
-// 	// 	printf("wow: %s\n", expected[i]);
-// 	// 	i++;
-// 	// }
+int main()
+{
+	// char	**expected = ft_split("\0aa\0bbb", '\0');
 
-// 	for (int i = 0; expected[i]; i++)
-// 	{
-// 		if (expected[i] != NULL)
-// 			printf("test failed");
-// 	}
-// 	printf("test success");
-// }
+	char	*s = "      split       this for   me  !       ";
+	char	**result = ft_split(s, ' ');
+
+	char	**expected = (char*[6]){"split", "this", "for", "me", "!", NULL};
+
+	int i = 0;
+	printf("mine:\n");
+	while (result[i])
+	{
+		printf("\"%s\", ", result[i]);
+		i++;
+	}
+
+	i = 0;
+	printf("\nreal:\n");
+	while (expected[i])
+	{
+		printf("\"%s\", ", expected[i]);
+		i++;
+	}
+	printf("\n");
+
+	// int i = 0;
+	// while (expected[i])
+	// {
+	// 	printf("wow: %s\n", expected[i]);
+	// 	i++;
+	// }
+
+	// for (int i = 0; expected[i]; i++)
+	// {
+	// 	if (expected[i] != NULL)
+	// 		printf("test failed");
+	// }
+	// printf("test success");
+}
+*/
