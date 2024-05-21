@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 23:15:34 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/19 23:17:35 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/21 09:47:21 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list	*tmp;
 	int	i;
 
 	i = 0;
-	tmp = lst;
-	while (tmp != NULL)
+	while (lst != NULL)
 	{
-		tmp = tmp->next;
+		lst = lst->next;
 		i++;
 	}
 	return (i);
