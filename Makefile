@@ -61,7 +61,7 @@ BONUS = ft_lstnew_bonus.c \
 
 # BONUS = ${addprefix ${SRC_DIR}, ${BONUS_FILES}}
 
-LIB = libft.a
+NAME = libft.a
 
 # SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
@@ -84,16 +84,16 @@ BONUS_OBJS = ${BONUS:.c=.o}
 %.o: %.c
 	${CC} ${CFLAGS} $< -o ${<:.c=.o}
 
-# ${TARGET}: main.c ${LIB}
+# ${TARGET}: main.c ${NAME}
 # 	${CC} ${CFLAGS} main.c -L. -lft -lbsd -o ${TARGET}
 
-${LIB}: ${OBJS}
-	ar rcs ${LIB} ${OBJS}
+${NAME}: ${OBJS}
+	ar rcs ${NAME} ${OBJS}
 
-all: ${LIB} #${TARGET}
+all: ${NAME} #${TARGET}
 
-bonus: ${LIB} ${OBJS} ${BONUS_OBJS}
-	ar rcs ${LIB} ${OBJS} ${BONUS_OBJS}
+bonus: ${NAME} ${OBJS} ${BONUS_OBJS}
+	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRC) ${BONUS}
@@ -107,7 +107,7 @@ clean:
 	rm -f *.so
 
 fclean: clean
-	rm -f ${LIB}
+	rm -f ${NAME}
 #	${TARGET}
 
 re: fclean all
