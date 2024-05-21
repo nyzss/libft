@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/21 10:10:30 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:36:52 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
-	char			*loc;
+	unsigned char	*loc;
 	unsigned char	cast;
 
 	i = 0;
-	loc = (char *)s;
+	loc = (unsigned char *)s;
 	cast = (unsigned char) c;
 	while (i < n)
 	{
