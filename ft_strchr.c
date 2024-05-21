@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:11:22 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	cast;
 
 	i = 0;
+	cast = (unsigned char) c;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == cast)
 			return ((char *)&str[i]);
 		i++;
 	}
-	if (str[i] == c)
+	if (str[i] == cast)
 		return ((char *)&str[i]);
 	return (NULL);
 }

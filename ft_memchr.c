@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okoca <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/02/08 15:11:58 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:10:30 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,28 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	*loc;
+	size_t			i;
+	char			*loc;
+	unsigned char	cast;
 
 	i = 0;
 	loc = (char *)s;
+	cast = (unsigned char) c;
 	while (i < n)
 	{
-		if (loc[i] == c)
+		if (loc[i] == cast)
 			return ((void *)&loc[i]);
 		i++;
 	}
 	return (NULL);
 }
+
+/*
+int main()
+{
+	char s[] = {0, 1, 2 ,3 ,4 ,5};
+	void *val = ft_memchr(s, 2 + 256, 3) == s + 2 //Cast check
+
+
+}
+*/
