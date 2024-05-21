@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/21 10:12:16 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:40:57 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int		i;
-	char	*occ;
-	unsigned char cast;
+	int				i;
+	char			*occ;
+	unsigned char	cast;
 
 	i = 0;
 	cast = (unsigned char) c;

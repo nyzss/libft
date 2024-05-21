@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/20 11:46:43 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/21 10:40:12 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ int main()
 	printf("\nworks: %d\n", !memcmp(my_func, real_func, 7));
 }
 */
-
 /*
 	//4
 	test qui ne passe pas:
@@ -114,4 +113,3 @@ int main()
 	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
 	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
 */
-
