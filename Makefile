@@ -6,19 +6,15 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/20 10:53:28 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/21 10:01:17 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-SRC_DIR = ./src/
+CFLAGS = -Wall -Werror -Wextra -I. -c
 
-INCLUDES_DIR = ./includes/
-
-CFLAGS = -Wall -Werror -Wextra -I ${INCLUDES_DIR} -c
-
-SRC_FILES = ft_atoi.c \
+SRC = ft_atoi.c \
 	ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
@@ -53,7 +49,7 @@ SRC_FILES = ft_atoi.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-BONUS_FILES = ft_lstnew_bonus.c \
+BONUS = ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstsize_bonus.c \
 	ft_lstlast_bonus.c \
@@ -63,11 +59,11 @@ BONUS_FILES = ft_lstnew_bonus.c \
 	ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c \
 
-BONUS = ${addprefix ${SRC_DIR}, ${BONUS_FILES}}
+# BONUS = ${addprefix ${SRC_DIR}, ${BONUS_FILES}}
 
 LIB = libft.a
 
-SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
+# SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 
 # TESTS_DIR = ./tests/
 
@@ -96,7 +92,7 @@ ${LIB}: ${OBJS}
 
 all: ${LIB} #${TARGET}
 
-bonus: ${OBJS} ${BONUS_OBJS}
+bonus: ${LIB} ${OBJS} ${BONUS_OBJS}
 	ar rcs ${LIB} ${OBJS} ${BONUS_OBJS}
 
 so:
@@ -106,9 +102,8 @@ so:
 clean:
 	rm -f ${OBJS}
 	rm -f ${BONUS_OBJS}
-	rm -f *.o
+	rm -f ./a.out
 	rm -f put*.txt
-	rm -f ${SRC_DIR}*.out
 	rm -f *.so
 
 fclean: clean
