@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/21 10:01:17 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/22 09:32:23 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,56 +59,29 @@ BONUS = ft_lstnew_bonus.c \
 	ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c \
 
-# BONUS = ${addprefix ${SRC_DIR}, ${BONUS_FILES}}
-
 NAME = libft.a
 
-# SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
-
-# TESTS_DIR = ./tests/
-
-# TESTS_FILES = test_str.c \
-# 	      test_mem.c \
-# 	      test_is.c \
-# 	      test_put.c \
-# 	      tests.c
-
-# TESTS = ${addprefix ${TESTS_DIR}, ${TESTS_FILES}}
-
-OBJS = ${SRC:.c=.o} #${TESTS:.c=.o}
+OBJS = ${SRC:.c=.o}
 
 BONUS_OBJS = ${BONUS:.c=.o}
-
-# TARGET = main
 
 %.o: %.c
 	${CC} ${CFLAGS} $< -o ${<:.c=.o}
 
-# ${TARGET}: main.c ${NAME}
-# 	${CC} ${CFLAGS} main.c -L. -lft -lbsd -o ${TARGET}
-
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
-all: ${NAME} #${TARGET}
+all: ${NAME}
 
 bonus: ${NAME} ${OBJS} ${BONUS_OBJS}
 	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRC) ${BONUS}
-	gcc -shared -o libft.so $(OBJS) ${BONUS_OBJS}
-
 clean:
 	rm -f ${OBJS}
 	rm -f ${BONUS_OBJS}
-	rm -f ./a.out
-	rm -f put*.txt
-	rm -f *.so
 
 fclean: clean
 	rm -f ${NAME}
-#	${TARGET}
 
 re: fclean all
 
