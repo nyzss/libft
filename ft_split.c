@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 09:05:44 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 09:21:52 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	count_words(char *str, char sep)
 			word_count++;
 		i++;
 	}
-	return (word_count);
+	return (word_count + 1);
 }
 
 static char	*ft_strdupsep(char *first, char sep, char **array, int index)
@@ -49,10 +49,8 @@ static char	*ft_strdupsep(char *first, char sep, char **array, int index)
 	if (!new)
 	{
 		while (i < index)
-		{
-			free(array[i]);
-			i++;
-		}
+			free(array[i++]);
+		free(array);
 		return (NULL);
 	}
 	i = 0;
@@ -65,16 +63,6 @@ static char	*ft_strdupsep(char *first, char sep, char **array, int index)
 	return (new);
 }
 
-int	handle_null(char **result, char *str, char c)
-{
-	if (count_words(str, c) == 0)
-	{
-		*result = NULL;
-		return (1);
-	}
-	return (0);
-}
-
 char	**ft_split(char const *str, char c)
 {
 	int		i;
@@ -83,13 +71,10 @@ char	**ft_split(char const *str, char c)
 
 	i = 0;
 	r_index = 0;
-	result = (char **)malloc(sizeof(char *) * (count_words((char *)str, c)
-				+ 1));
+	result = (char **)malloc(sizeof(char *) * (count_words((char *)str, c)));
 	if (!result)
 		return (NULL);
-	if (handle_null(result, (char *)str, c) == 1)
-		return (result);
-	while (str[i])
+	while (str[i] && count_words((char *)str, c) - 1 != 0)
 	{
 		if (is_separator(str[i], c))
 			i++;
@@ -97,10 +82,7 @@ char	**ft_split(char const *str, char c)
 		{
 			result[r_index] = ft_strdupsep((char *)&str[i], c, result, r_index);
 			if (!result[r_index])
-			{
-				free(result);
 				return (NULL);
-			}
 			i += ft_strlen(result[r_index]);
 			r_index++;
 		}
@@ -108,6 +90,19 @@ char	**ft_split(char const *str, char c)
 	result[r_index] = NULL;
 	return (result);
 }
+
+// function i used to handle the case where the count_words == 0.
+// if (handle_null(result, (char *)str, c) == 1)
+// 	return (result);
+// int	handle_null(char **result, char *str, char c)
+// {
+// 	if (count_words(str, c) == 0)
+// 	{
+// 		*result = NULL;
+// 		return (1);
+// 	}
+// 	return (0);
+// }
 
 /*
 #include <stdio.h>
