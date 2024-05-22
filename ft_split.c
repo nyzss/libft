@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/22 08:34:50 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 09:05:44 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static char	*ft_strdupsep(char *first, char sep, char **array, int index)
 		while (i < index)
 		{
 			free(array[i]);
+			i++;
 		}
 		return (NULL);
 	}
@@ -95,6 +96,11 @@ char	**ft_split(char const *str, char c)
 		else
 		{
 			result[r_index] = ft_strdupsep((char *)&str[i], c, result, r_index);
+			if (!result[r_index])
+			{
+				free(result);
+				return (NULL);
+			}
 			i += ft_strlen(result[r_index]);
 			r_index++;
 		}
