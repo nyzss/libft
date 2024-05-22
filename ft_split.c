@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/20 12:00:57 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 08:34:50 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	count_words(char *str, char sep)
 	return (word_count);
 }
 
-static char	*ft_strdupsep(char *first, char sep)
+static char	*ft_strdupsep(char *first, char sep, char **array, int index)
 {
 	int		i;
 	int		j;
@@ -47,7 +47,14 @@ static char	*ft_strdupsep(char *first, char sep)
 		j++;
 	new = (char *)malloc(sizeof(char) * (j + 1));
 	if (!new)
+	{
+		while (i < index)
+		{
+			free(array[i]);
+		}
 		return (NULL);
+	}
+	i = 0;
 	while (i < j)
 	{
 		new[i] = first[i];
@@ -77,17 +84,17 @@ char	**ft_split(char const *str, char c)
 	r_index = 0;
 	result = (char **)malloc(sizeof(char *) * (count_words((char *)str, c)
 				+ 1));
-	if (handle_null(result, (char *)str, c) == 1)
-		return (result);
 	if (!result)
 		return (NULL);
+	if (handle_null(result, (char *)str, c) == 1)
+		return (result);
 	while (str[i])
 	{
 		if (is_separator(str[i], c))
 			i++;
 		else
 		{
-			result[r_index] = ft_strdupsep((char *)&str[i], c);
+			result[r_index] = ft_strdupsep((char *)&str[i], c, result, r_index);
 			i += ft_strlen(result[r_index]);
 			r_index++;
 		}

@@ -6,7 +6,7 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 23:40:23 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/21 10:28:24 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/22 08:42:03 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*new_node;
+	t_list	*tmp;
 
 	new_lst = NULL;
 	new_node = NULL;
+	tmp = NULL;
 	while (lst)
 	{
-		new_node = ft_lstnew((*f)(lst->content));
+		tmp = (*f)(lst->content);
+		new_node = ft_lstnew(tmp);
 		if (!new_node)
 		{
+			(*del)(tmp);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
