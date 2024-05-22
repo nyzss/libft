@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/22 09:32:23 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/22 09:38:35 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,12 +69,12 @@ BONUS_OBJS = ${BONUS:.c=.o}
 	${CC} ${CFLAGS} $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	ar rc ${NAME} ${OBJS}
 
 all: ${NAME}
 
 bonus: ${NAME} ${OBJS} ${BONUS_OBJS}
-	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
+	ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:
 	rm -f ${OBJS}
