@@ -6,11 +6,11 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 23:24:17 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/20 10:59:20 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 09:04:22 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

@@ -6,11 +6,11 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 23:31:35 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/20 12:19:44 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 09:04:22 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
