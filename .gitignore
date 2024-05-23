@@ -14,3 +14,4 @@ libft-unit-test
 *.o
 *.out
 *.so
+.vscode
