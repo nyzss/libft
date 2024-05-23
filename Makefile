@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/23 09:09:42 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/23 09:11:31 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-bonus: ${NAME} ${OBJS} ${BONUS_OBJS}
+bonus: ${NAME} ${BONUS_OBJS}
 	ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:

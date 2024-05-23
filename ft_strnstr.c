@@ -6,29 +6,29 @@
 /*   By: okoca <okoca@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:36 by okoca             #+#    #+#             */
-/*   Updated: 2024/05/19 17:24:24 by okoca            ###   ########.fr       */
+/*   Updated: 2024/05/23 09:13:01 by okoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	if (needle[0] == '\0')
-		return ((char *)haystack);
-	while (i < len && haystack[i])
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
 		j = 0;
-		if (needle[j] == haystack[i])
+		if (little[j] == big[i])
 		{
-			while ((needle[j] && needle[j] == haystack[i + j]) && i + j < len)
+			while ((little[j] && little[j] == big[i + j]) && i + j < len)
 				j++;
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
+			if (little[j] == '\0')
+				return ((char *)&big[i]);
 		}
 		i++;
 	}
@@ -44,13 +44,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 int main()
 {
-	// char haystack[30] = "aaabcabcd";
-	char haystack[30] = "lorem ipsum dolor sit amet";
-	// char needle[10] = "aabc";
+	// char big[30] = "aaabcabcd";
+	char big[30] = "lorem ipsum dolor sit amet";
+	// char little[10] = "aabc";
 	char *empty = "";
 
-	char *real = strnstr(haystack, "", 10);
-	char *mine = ft_strnstr(haystack, "", 10);
+	char *real = strnstr(big, "", 10);
+	char *mine = ft_strnstr(big, "", 10);
 
 	printf("real: %s, result: %d\n", real, real == empty);
 	printf("mine: %s, result: %d\n", mine, mine == empty);
@@ -61,5 +61,5 @@ int main()
 tests that are not passing:
 check(ft_strnstr(empty, "", -1) == empty); good
 check(ft_strnstr(empty, "", 0) == empty); good
-check(ft_strnstr(haystack, "cd", 8) == NULL);
+check(ft_strnstr(big, "cd", 8) == NULL);
 */
