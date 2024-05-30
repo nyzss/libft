@@ -6,7 +6,7 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/23 09:39:35 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/30 20:25:56 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,10 +65,14 @@ OBJS = ${SRC:.c=.o}
 
 BONUS_OBJS = ${BONUS:.c=.o}
 
+FT_PRINTF = ft_printf
+
 %.o: %.c
 	${CC} ${CFLAGS} $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
+	make -C ${FT_PRINTF}
+	cp ${FT_PRINTF}/libftprintf.a ${NAME}
 	ar rc ${NAME} ${OBJS}
 
 all: ${NAME}
@@ -78,9 +82,11 @@ bonus: ${NAME} ${BONUS_OBJS}
 
 clean:
 	rm -f ${OBJS}
+	make clean -C ${FT_PRINTF}
 	rm -f ${BONUS_OBJS}
 
 fclean: clean
+	make fclean -C ${FT_PRINTF}
 	rm -f ${NAME}
 
 re: fclean all
