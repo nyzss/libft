@@ -6,13 +6,13 @@
 #    By: okoca <okoca@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by okoca             #+#    #+#              #
-#    Updated: 2024/05/30 20:25:56 by okoca            ###   ########.fr        #
+#    Updated: 2024/05/30 20:32:34 by okoca            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -I. -c
+CFLAGS = -Wall -Werror -Wextra -I. -Ift_printf/includes -c
 
 SRC = ft_atoi.c \
 	ft_bzero.c \
